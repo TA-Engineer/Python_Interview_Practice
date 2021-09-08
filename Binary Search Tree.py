@@ -69,13 +69,15 @@ class BinarySearchTree:
             # THis is basically inorder traversal of the tree
             print(str(curr_node.value))
             self._print_tree(curr_node.right_child)
-
+    
+    
+    # creating a function to search in the tree
     def search(self, value):
         if self.root != None: 
             return self._search(value, self.root)
         else: 
             return False
-
+    
     def _search(self, value, curr_node):
         if value == curr_node.value:
             return True
@@ -89,7 +91,7 @@ class BinarySearchTree:
 
 
 
-
+# creating a fucntion to fill the tree
 
 def fill_tree (tree, num_elems = 100, max_int= 1000):
     from random import randint
@@ -99,27 +101,31 @@ def fill_tree (tree, num_elems = 100, max_int= 1000):
 
     return tree
 
+
+
+
+
 # practice code
 
-tree = BinarySearchTree()
+# tree = BinarySearchTree()
 
-tree.insert(5)
-tree.insert(1)
-tree.insert(3)
-tree.insert(7)
-tree.insert(6)
-tree.insert(9)
-tree.insert(0)
-tree.insert(19)
-tree.insert(31)
-tree.insert(13)
+# tree.insert(5)
+# tree.insert(1)
+# tree.insert(3)
+# tree.insert(7)
+# tree.insert(6)
+# tree.insert(9)
+# tree.insert(0)
+# tree.insert(19)
+# tree.insert(31)
+# tree.insert(13)
 
-# tree = fill_tree(tree)
+# # tree = fill_tree(tree)
 
-tree.print_tree()
+# tree.print_tree()
 
-print("Tree height is: ", str(tree.height()))
+# print("Tree height is: ", str(tree.height()))
 
 
-print(tree.search(31))
-print(tree.search(2))
+# print(tree.search(31))
+# print(tree.search(2))
