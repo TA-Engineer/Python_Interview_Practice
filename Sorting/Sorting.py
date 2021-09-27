@@ -71,40 +71,40 @@ The running time for the Algorithm is O(n*log(n))
 def MergeSort(A):
     n = len(A)
     # Check the length of array first
-    if n == 1:
+    if n <= 1:
         return A
     # find the middle value
     m = int(n/2)
     # Split the array in two sub-arrays and solve them recursively
-    B = MergeSort(A[:m+1])
-    C = MergeSort(A[m+1:])
+    B = MergeSort(A[:m])
+    C = MergeSort(A[m:])
     
     # After having sorted B and C we can MERGE them
     A_Sorted = []
 
     
-    i = j = k = 0
+    i = j = 0
     # while loop to compare values between the two list
     while i < len(B) and j < len(C):
         if B[i] < C[j]:
-            A_Sorted[k] = B[i]
+            A_Sorted.append(B[i])
             i += 1
         else:
-            A_Sorted[k] = C[j]
+            A_Sorted.append(C[j])
             j += 1
         
-        k += 1
+        
 
     # moving any remaining element from the sub array to final array
     while i < len(B):
-        A_Sorted[k] = B[i]
+        A_Sorted.append(B[i])
         i += 1
-        k += 1
+        
 
     while j < len(C):
-        A_Sorted[k] = B[j]
+        A_Sorted.append(B[j])
         j += 1
-        k += 1
+        
 
     return A_Sorted
 
@@ -115,8 +115,8 @@ def MergeSort(A):
 
 '''
 It is a comparison based ALgorithm
-running time si O(n log N) on average (beacuse the ALgo is randomized)
-Note this si efficient in practice
+running time is O(n log N) on average (beacuse the ALgo is randomized)
+Note this is efficient in practice
 
 '''
 
@@ -161,9 +161,10 @@ def quickSort(arr, low, high):
   
   
 # Driver code to test above
-arr = [10, 7, 8, 9, 1, 5]
+arr = [10, 7, 8, 9]
 n = len(arr)
-quickSort(arr, 0, n-1)
+# quickSort(arr, 0, n-1)
+array2 = MergeSort(arr)
 print("Sorted array is:")
 for i in range(n):
     print("%d" % arr[i]),

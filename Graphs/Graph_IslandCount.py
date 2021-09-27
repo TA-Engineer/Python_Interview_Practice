@@ -5,7 +5,7 @@ grid = [
   ['W', 'W', 'L', 'L', 'W'],
   ['L', 'W', 'W', 'L', 'L'],
   ['L', 'L', 'W', 'W', 'W'],
-];
+]
 
 # islandCount(grid); // -> 3
 
@@ -71,7 +71,7 @@ def explore(grid, row, col, visited):
 #                 count +=1                
 #                 visited.update(explore(grid, row, col, visited))
     
-    return count
+#     return count
 
 def islandCount(grid):
 
@@ -80,7 +80,7 @@ def islandCount(grid):
 
     for row in range(0,len(grid)):
         for col in range(0,len(grid[0])):
-            explore(grid, row, col, visited)
+            # explore(grid, row, col, visited)
             
             position = str(row)+','+str(col)
 

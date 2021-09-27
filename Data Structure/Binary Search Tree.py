@@ -1,3 +1,6 @@
+# https://www.youtube.com/watch?v=f5dU3xoE6ms&t=1479s
+
+
 class Node:
     def __init__ (self, value = None):
         # The useer will not interact with this class. This is just a wrapper for the binary serarch tree class
